@@ -1,0 +1,129 @@
+<!--
+ Your First PWA Codelab (https://g.co/codelabs/pwa)
+
+ Copyright 2019 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora HCP</title>
+  <meta name="codelab" content="your-first-pwa-v3">
+  <link rel="stylesheet" type="text/css" href="/styles/inline.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CODELAB: Add link rel manifest -->
+  <link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="PWA Clima">
+<link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+  <!-- CODELAB: Add iOS meta tags and icons -->
+  <!-- CODELAB: Add description here -->
+  <meta name="description" content="Calculadora Handicap RFEG">
+
+  <!-- CODELAB: Add meta theme-color -->
+<meta name="theme-color" content="#2F3BA2" />
+
+</head>
+<body>
+
+  <header class="header">
+    <h1>
+      Calculadora Sistema Handicap RFEG
+      <a href="https://github.com/juansoler" class="powered-by">
+        Powered by Juan Soler
+      </a>
+    </h1>
+    <button id="butInstall" aria-label="Install"></button>
+    <button id="butRefresh" aria-label="Refresh"></button>
+  </header>
+
+  <main class="main">
+
+    
+
+    <div id="calculo" class="weather-card">
+      <div id="addDialogContainerr">
+    <div class="dialog2">
+      <div class="dialog-title2">Calcular nuevo Handicap</div>
+      <div class="dialog-body2">
+       
+        <select id="categoria" aria-label="Categoria de Handicap">
+          <!--
+            Values are lat/lon values, use Google Maps to find and add
+            additional cities.
+          -->
+          <option value="1">Menor o igual que 4,4</option>
+          <option value="2">4,5-11,4</option>
+          <option value="3">11,5-18,4</option>
+          <option value="4">18,5-26,4</option>
+          <option value="5">26,5-36,4</option>
+          <option value="6">36,5-48</option>
+          
+        </select>
+        
+         <br>
+        <br>
+                Handicap actual: &nbsp;  <input type="text" id="hcpActual" value="" >
+    <br>
+        <br>
+               Puntos StableFord: &nbsp; <input type="text" id="puntos" value="">
+        <br>
+        <br>
+              Nuevo Handicap: <label id="nuevoHcp" value=""></label>
+        <br>
+        <br>
+      </div>
+      <div class="dialog-buttons2">
+        <button id="butDialogCancel" class="button">Cancel</button>
+        <button id="butDialogAdd" class="button">Calcular</button>
+      </div>
+    </div>
+  </div>
+    </div>
+
+    
+    
+    
+    
+    
+  </main>
+
+  
+
+  <script src="/scripts/luxon-1.11.4.js"></script>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/install.js"></script>
+
+  <!-- CODELAB: Add the install script here -->
+  <script>
+    // CODELAB: Register service worker.
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then((reg) => {
+          console.log('Service worker registered.', reg);
+        });
+  });
+}
+    
+  </script>
+
+</body>
+</html>
